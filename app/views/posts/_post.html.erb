@@ -1,0 +1,6 @@
+<p> <b> <%= post.title %></b></p><br>
+<p> <%= post.content  %> </p><br>
+<% if is_signed_in? %>
+<p> Post by: <%= User.find_by(id: post.user_id).name %></p>
+<% end %>
+<p> ----------------------------------------  </p>   

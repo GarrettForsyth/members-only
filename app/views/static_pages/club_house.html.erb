@@ -1,0 +1,16 @@
+<h1> Welcome to the Club House!</h1>
+
+<% if is_signed_in? %>
+  <p> You are currently signed as <%= current_user.name %>.</p>
+  <%= link_to "Create a Post", new_post_path(current_user) %><br>
+<% else %>
+  <p> You are currently not signed in.</p>
+<% end %>
+
+<%= link_to("Sign in to see who authors' of posts", sign_in_path ) %>
+<br>
+<%= link_to "Sign Out", sign_out_path, method: :delete %> <br>
+
+<%= link_to "See Posts", posts_path %>
+
+
